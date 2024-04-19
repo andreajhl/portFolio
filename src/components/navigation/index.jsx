@@ -10,8 +10,8 @@ const Navigation = () => {
   const handleDropdown = () => setIsOpen(!isOpen)
 
   return (
-    <nav className='nav'>
-      <div className='navbar'>
+    <header className='header'>
+      <nav className='navbar'>
         <div className='navbar__header'>
           <button className="navbar-brand" href="">A.</button>  
           <button
@@ -32,46 +32,44 @@ const Navigation = () => {
           aria-expanded={isOpen}
           className={classNames(
             'navbar__collapse',
-            { 'collapse': !isOpen, 'in': isOpen }
+            { 'in': isOpen }
           )} 
         >
-          <div className="navbar__menu-container">
-            <ul className="navbar__menu">
-              <li>
+          <ul className="navbar__menu" role='menu'>
+              <li role='menuitem'>
                 <a title="Home" href="#home" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.initial}
                 </a>
               </li>
-              <li>
+              <li role='menuitem'>
                 <a title="About Us" href="#about" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.about}
                 </a>
               </li>
-              <li>
+              <li role='menuitem'>
                 <a title="About Us" href="#skill" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.skill}
                 </a>
               </li>
-              <li>
+              <li role='menuitem'>
                 <a title="Projects" href="#projects" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.projects}
                 </a>
               </li>
-              <li>
+              <li role='menuitem'>
                 <a title="Experiences" href="#curriculum" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.experiences}
                 </a>
               </li>
-              <li>
+              <li role='menuitem'>
                 <a title="Contact Us" href="#contact" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.contact}
                 </a>
               </li>
             </ul>
-          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
