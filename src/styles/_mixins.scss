@@ -29,3 +29,11 @@
     }
   }
 }
+
+@mixin underline($color: $component-background) {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 30px;
+  background-color: $color;
+}
