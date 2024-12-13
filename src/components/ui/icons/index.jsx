@@ -18,14 +18,17 @@ import {
   SiBootstrap,
   SiSlack,
   SiSass,
-  SiChartdotjs,
   SiRedux,
-  SiMui 
+  SiMui,
+  SiPython,
+  SiTailwindcss,
+  SiCypress,
 } from 'react-icons/si';
 
 const languages = [
   <SiJavascript />,
   <SiTypescript />,
+  <SiPython />,
   <IoLogoHtml5 />,
 ];
 
@@ -34,26 +37,20 @@ const frameworks = [
   <SiRedux />,
   <TbBrandNextjs />,
   <IoLogoNodejs/>,
-  <SiExpress />,
 ];
 
 const styles = [
   <IoLogoCss3 />,
   <SiSass />,
+  <SiTailwindcss />,
+  <SiMui />,
   <SiBootstrap />,
-  <SiMui />
 ];
 
-const testing = [
+const others = [
   <SiJest />,
-];
-
-const analysis = [
+  <SiCypress />,
   <DiGoogleAnalytics />,
-];
-
-const graphics = [
-  <SiChartdotjs />,
 ];
 
 const toolIcons = [
@@ -68,9 +65,7 @@ const techIcons = {
   languages,
   frameworks,
   styles,
-  testing,
-  analysis,
-  graphics,  
+  others,
 };
 
 export {
@@ -85,7 +80,6 @@ export {
   SiBootstrap,
   SiSlack,
   SiSass,
-  SiChartdotjs,
   IoLogoNodejs,
   IoLogoCss3,
   IoLogoHtml5,
