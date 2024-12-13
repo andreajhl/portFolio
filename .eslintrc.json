@@ -1,3 +1,63 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "prefer-arrow-callback": "error",
+    "react/no-unescaped-entities": "off",
+    "func-style": ["error", "expression", { "allowArrowFunctions": true }],
+    "camelcase": ["error", { "properties": "always" }],
+    "no-unused-vars": ["error", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }],
+    "semi": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"], // Corrige comas faltantes automáticamente
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "import/named": "off",
+    "no-console": "error",
+    "import/namespace": "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["sibling", "parent", "index"]
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@components", "./components"],
+          ["@constants", "./constants"],
+          ["@ui", "./components/ui"],
+          ["@wordings", "./wordings"],
+          ["@styles", "./styles"]
+        ],
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  }
 }
