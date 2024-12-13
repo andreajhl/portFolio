@@ -1,0 +1,49 @@
+@import '../../../styles/breakpoints';
+@import '../../../styles/variables';
+
+.toggle {
+  gap: .5rem;
+  border: none;
+  display: flex;
+  background: none;
+  flex-direction: column;
+
+  .icon-bar {
+    height: 2px;
+    width: 35px;
+    display: block;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
+    background: $component-background;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.open,
+.toggle:active {
+  .icon-bar:first-child {
+    transform: rotate(35deg);
+  }
+
+  .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .icon-bar:last-child {
+    transform: rotate(-37deg);
+  }
+
+  .menu__collapse {
+    display: block;
+  }
+
+  @include desktop {
+    .open {
+      height: auto;
+    }
+  }
+}
