@@ -1,34 +1,30 @@
 export const projectCard = {
-  mercadoLibre: '/assets/img/mercado-libre/meli.png',
-  ficohsa: '/assets/img/e-commerce/e-commerce.png',
-  famosos: '/assets/img/famosos/famosos.png',
+  mercadoLibre: '/assets/img/mercadoLibre/logo.png',
+  ficohsa: '/assets/img/ficohsa/logo.png',
+  adGoat: '/assets/img/adGoat/logo.png',
 };
 
 export const projectsCarousel = {
   mercadoLibre: [
     {
-      url: '/assets/img/mercado-libre/meli.png',
+      url: '/assets/img/mercadoLibre/shipping.png',
       alt: 'banner market application shipments',
     },
   ],
   ficohsa: [
     {
-      url: '/assets/img/e-commerce/e-commerce.gif',
+      url: '/assets/img/ficohsa/app.png',
       alt: 'video ecommerce of books',
     },
   ],
-  famosos: [
+  adGoat: [
     {
-      url: '/assets/img/famosos/famosos-1.png',
-      alt: 'celebrity homepage photo',
+      url: '/assets/img/adGoat/365.png',
+      alt: 'banner offers platform for deals, catalogs, and promotions 365',
     },
     {
-      url: '/assets/img/famosos/famosos-2.png',
-      alt: 'photo purchase confirmation page',
-    },
-    {
-      url: '/assets/img/famosos/famosos-3.png',
-      alt: 'photo category page',
+      url: '/assets/img/adGoat/tpt.png',
+      alt: 'banner loan comparison platform for personal financing.',
     },
   ],
 };
