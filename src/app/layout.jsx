@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: 'Andrea Hernandez | Front End Developer',
     description: 'Descubre mi trayectoria como Front End Developer: más de 3 años desarrollando interfaces web modernas y optimizadas con React y Next.js.',
-    url: 'https://www.tuportfolioweb.com',
+    url: 'https://andrea-hernandez-dev.vercel.app/',
     type: 'website',
     images: [
       {
@@ -44,7 +44,7 @@ const RootLayout = ({ children }) => (
             '@context': 'https://schema.org',
             '@type': 'Person',
             'name': 'Andrea Hernandez',
-            'url': 'https://www.tuportfolioweb.com',
+            'url': 'https://andrea-hernandez-dev.vercel.app/',
             'jobTitle': 'Front End Developer',
             'sameAs': [
               'https://github.com/andreajhl',
