@@ -45,7 +45,7 @@ const Projects = () => {
   return (
     <div className='projects'>
       <h2 className='projects-title'>{title}</h2>
-      <hr aria-hidden="true" className='projects-divider' />
+      <hr aria-hidden='true' className='projects-divider' />
       <div className='projects-grid'>
         {
           projectNames.map(key => (

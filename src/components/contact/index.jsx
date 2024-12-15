@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div>
       <h2 className='contact-title'>{title}</h2>
-      <hr aria-hidden="true" className='contact-divider' />
+      <hr aria-hidden='true' className='contact-divider' />
       <div className='contact-content'>
         <p className='contact-text'>{content}</p>
         <div className='contact-widgets'>

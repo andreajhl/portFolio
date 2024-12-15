@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className='about'>
       <h2 className='about-title'>{title}</h2>
-      <hr aria-hidden="true" className='about-title-line' />
+      <hr aria-hidden='true' className='about-title-line' />
       <div className='about-content'>
         <p className='about-text'>
           <strong>{profession}</strong> {content}

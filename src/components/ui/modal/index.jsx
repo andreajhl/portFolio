@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+
 import Carousel from '@ui/carousel';
 import { Modal as ModalBoot } from 'react-bootstrap';
 import './styles.scss';

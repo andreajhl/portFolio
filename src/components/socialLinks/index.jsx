@@ -7,7 +7,7 @@ const SocialLinks = () => {
   const { contact: { channels } } = wordings;
 
   return (
-    <section className="social-links">
+    <section className='social-links'>
       <h4 className='social-links-title'>
         <strong>{channels.strong}</strong> {channels.content}
       </h4>
@@ -15,7 +15,7 @@ const SocialLinks = () => {
         <Link
           href='https://github.com/andreajhl'
           rel='noopener noreferrer'
-          aria-label="Visit my GitHub profile"
+          aria-label='Visit my GitHub profile'
           className='social-links-icon'
           target='_blank'
         >
@@ -25,7 +25,7 @@ const SocialLinks = () => {
           href='https://www.linkedin.com/in/andreahernandez29/'
           rel='noopener noreferrer'
           className='social-links-icon'
-          aria-label="Visit my LinkedIn profile"
+          aria-label='Visit my LinkedIn profile'
           target='_blank'
         >
           <SiLinkedin /> 
@@ -34,7 +34,7 @@ const SocialLinks = () => {
           href='mailto:andreajhl29@gmail.com'
           rel='noopener noreferrer'
           className='social-links-icon'
-          aria-label="Send me an email"
+          aria-label='Send me an email'
           target='_blank'
         >
           <SiGmail />  

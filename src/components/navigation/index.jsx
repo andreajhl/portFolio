@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+
 import Menu from '@components/menu';
 import HamburgerButton from '@ui/hamburgerButton';
 import classNames from 'classnames';

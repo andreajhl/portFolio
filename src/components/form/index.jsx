@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+
 import Toast from '@components/ui/toast';
 import wordings from '@wordings';
 import { sendEmail } from 'queries';

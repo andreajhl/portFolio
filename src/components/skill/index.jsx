@@ -47,7 +47,7 @@ const Skill = () => {
   return (
     <div className='skill'>
       <h2 className='skill-main-title'>{title}</h2>
-      <hr aria-hidden="true" className='skill-divider' />
+      <hr aria-hidden='true' className='skill-divider' />
       <div className='skill-content'>
         <SkillSection title={techTitle}>
           {techItems.map(tech => (
