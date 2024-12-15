@@ -1,0 +1,60 @@
+
+@import '../../../styles/breakpoints';
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-.625rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast {
+  top: 1rem;
+  gap: .5rem;
+  right: 1rem;
+  z-index: 1000;
+  position: fixed;
+  padding: 1rem 1.5rem;
+  border-radius: .3rem;
+  background-color: #333;
+  animation: fadeIn 0.3s ease-out;
+  box-shadow: 0 2px .625rem rgba(0, 0, 0, 0.2);
+  @include text(1rem, normal, normal, white);
+  @include display-flex(space-between, flex-start);
+
+  &--info {
+    background-color: #007bff;
+  }
+  
+  &--success {
+    background-color: $highlight-color;
+  }
+  
+  &--error {
+    background-color: #dc3545;
+  }
+  
+  &--warning {
+    background-color: #ffc107;
+  }
+
+  &-message {
+    margin: 0;
+    flex-grow: 1;
+    white-space: pre;
+  }
+
+  &-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
