@@ -1,0 +1,24 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.footer {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 1rem 0;
+  background-color: $highlight-color;
+  @include text(1rem, normal, normal, white);
+  @include display-flex(space-around, center);
+}
+
+@include tablet {
+  .footer {
+    font-size: 1.125rem;
+  }
+}
+
+@include desktop {
+  .footer {
+    font-size: 1.25rem;
+  }
+}
