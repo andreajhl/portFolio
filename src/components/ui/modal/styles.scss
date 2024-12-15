@@ -1,46 +1,52 @@
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/maps';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/close';
+@import '~bootstrap/scss/transitions';
 @import '../../../styles/breakpoints';
 @import '../../../styles/mixins';
 
-.modal__container {
+.modal-container {
   @include display-flex(center);
 }
 
-.modal-dialog-centered {
+.modal-dialog {
   justify-content: center;
 
   .modal-content {
     align-items: center;
-    
-    .modal-body {
-      margin-top: 20px;
-      max-width: 600px;
-    }
-  }
+    border-radius: .5rem;
 
-  @include desktop {
-    .modal-content {
-      max-width: 600px;
+    .modal-body {
+      margin-top: 1.25rem;
+      max-width: 37.5rem;
+      padding: 0 1rem;
+    }
+
+    .modal-header {
+      width: 100%;
+      border: none;
+      padding: 1rem 1rem 0;
     }
   }
 }
 
+@include tablet {
+  .modal-dialog > .modal-content > .modal-body {
+    padding: 0 1.5rem;
+  }  
+}
 
-.modal-dialog-centered {
-  justify-content: center;
+@include desktop {
+  .modal-dialog > .modal-content {
+    max-width: 37.5rem;
 
-  .modal-content {
-    align-items: center;
-    
     .modal-body {
-      margin-top: 20px;
-      max-width: 600px;
-    }
-  }
-
-  @include desktop {
-    .modal-content {
-      max-width: 600px;
+      padding: 0 2rem;
     }
   }
 }
