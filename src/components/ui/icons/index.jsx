@@ -1,6 +1,6 @@
-import { FaJira } from 'react-icons/fa'
-import { TbBrandNextjs } from 'react-icons/tb'
+/* eslint-disable react/jsx-key */
 import { DiGoogleAnalytics, DiScrum } from 'react-icons/di';
+import { FaJira } from 'react-icons/fa';
 import {
   IoLogoNodejs,
   IoLogoCss3,
@@ -16,14 +16,17 @@ import {
   SiJest,
   SiGithub,
   SiBootstrap,
-  SiSlack,
   SiSass,
   SiRedux,
   SiMui,
   SiPython,
   SiTailwindcss,
   SiCypress,
+  SiLinkedin,
+  SiFigma,
+  SiGmail,
 } from 'react-icons/si';
+import { TbBrandNextjs } from 'react-icons/tb';
 
 const languages = [
   <SiJavascript />,
@@ -55,10 +58,9 @@ const others = [
 
 const toolIcons = [
   <SiGithub />,
-  <SiTrello />,
+  <SiFigma />,
   <FaJira />,
   <DiScrum />,
-  <SiSlack />,
 ];
 
 const techIcons = {
@@ -78,7 +80,6 @@ export {
   SiJest,
   SiGithub,
   SiBootstrap,
-  SiSlack,
   SiSass,
   IoLogoNodejs,
   IoLogoCss3,
@@ -87,6 +88,9 @@ export {
   DiScrum,
   TbBrandNextjs,
   FaJira,
+  SiLinkedin,
+  SiGmail,
   techIcons,
   toolIcons,
 };
+/* eslint-disable react/jsx-key */
