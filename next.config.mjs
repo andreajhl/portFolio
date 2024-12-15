@@ -13,6 +13,7 @@ const nextConfig = {
       '@ui': resolve(__dirname, 'src/components/ui'),
       '@wordings': resolve(__dirname, 'src/wordings'),
       '@styles': resolve(__dirname, 'src/styles'),
+      '@queries': resolve(__dirname, 'src/queries'),
     };
 
     config.resolve.extensions = ['.js', '.jsx'];

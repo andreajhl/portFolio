@@ -20,7 +20,6 @@
     ],
     "import/prefer-default-export": 0,
     "import/named": "off",
-    "no-console": "error",
     "import/namespace": "off",
     "import/order": [
       "error",
@@ -54,7 +53,8 @@
           ["@constants", "./constants"],
           ["@ui", "./components/ui"],
           ["@wordings", "./wordings"],
-          ["@styles", "./styles"]
+          ["@styles", "./styles"],
+          ["@queries", "./queries"]
         ],
         "extensions": [".js", ".jsx"]
       }
