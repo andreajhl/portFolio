@@ -5,7 +5,9 @@ export default {
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/' },
-      { userAgent: 'Googlebot', allow: '/' },
+    ],
+    additionalSitemaps: [
+      'https://andrea-hernandez-dev.vercel.app/sitemap.xml',
     ],
   },
   sitemapSize: 5000,
