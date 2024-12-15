@@ -1,65 +1,75 @@
-import React from 'react';
-import { projectCard, projectsCarousel } from '@/constants/projects';
-import wordings from '@/wordings';
-import './styles.scss';
-import CustomModal from '../ui/custom-modal';
 
-const DescriptionProyect = ({ descriptionData, stackLabel }) => {
-  const { title, subtitle, stackTechnology, description } = descriptionData;
+import { projectCard, projectsCarousel } from '@constants/projects';
+import Modal from '@ui/modal';
+import wordings from '@wordings';
+import './styles.scss';
+
+const DescriptionProject = ({ descriptionData, stackLabel }) => {
+  const { job, subtitle, stackTechnology, description } = descriptionData;
   const listItem = stackTechnology.replaceAll(' /', ',');
 
   return (
-    <div className="description">
-      <div className="description__head">
-        <h3 className="description__head-title">{title}</h3>
-        <span className="description__head-subtitle">{subtitle}</span>
+    <div className='project-description'>
+      <div className='project-description-head'>
+        <h3 className='project-description-title'>{job}</h3>
+        <p className='project-description-title--lighter'>{subtitle}</p>
       </div>
-      <p className="description__content">{description}</p>
-      <p className="description__footer">{stackLabel} <span className="description__footer--lighter">{listItem}</span></p>
+      <p className='project-description-content'>{description}</p>
+      <p className='project-description-footer'>
+        {stackLabel} <span className='project-description-footer--lighter'>{listItem}</span>
+      </p>
     </div>
-  )
-}
+  );
+};
+
+const ProjectCard = ({ job, position, date, logo, children }) => (
+  <article className='project-card'>
+    <div
+      className='project-card-image'
+      aria-label={`Logo of ${job}`}
+      style={{ background: `url(${logo}) center/contain no-repeat` }}
+    />
+    <div className='project-card-details'>
+      <h3 className='project-card-job'>{job}</h3>
+      <h4 className='project-card-position'>{position}</h4>
+      <p className='project-card-date'>{date}</p>
+    </div>
+    {children}
+  </article>
+);
 
 const Projects = () => {
-  const {
-    title,
-    learnMore,
-    stackLabel,
-    projects,
-  } = wordings.projects;
+  const { projects: { title, learnMore, stackLabel, projects } } = wordings;
+  const projectNames = Object.keys(projects);
 
   return (
-    <section className='project section-container'>
-      <h2 className='section-title'>{title}</h2>
-      <span className='section-line-title'></span>
-        <div className='project__content'>
-          {
-            Object.keys(projects).map(key => (
-              <div
-                key={projects[key].title}
-                className="project__content-item"
+    <div className='projects'>
+      <h2 className='projects-title'>{title}</h2>
+      <hr aria-hidden="true" className='projects-divider' />
+      <div className='projects-grid'>
+        {
+          projectNames.map(key => (
+            <ProjectCard
+              {...projects[key]}
+              key={projects[key].job}
+              logo={projectCard[key]}
+            >
+              <Modal
+                textBtn={learnMore}
+                photosCarousels={projectsCarousel[key]}
+                customClass='project-footer'
               >
-                <div className="project__content-item__img" style={{ background: `url(${projectCard[key]}) top center/cover` }}></div>
-                <div className="project__content-item__text">
-                  <div className="project__content-item__text-head">
-                    <div className="project__content-item__text-head-title--bold">{projects[key].title}</div>
-                    <span className="project__content-item__text-head-title">{projects[key].date}</span>
-                  </div>
-                  <CustomModal
-                    textBtn={learnMore}
-                    key={projects[key].title}
-                    photosCarousels={projectsCarousel[key]}
-                    customClass="project__content-item__text-footer"
-                  >
-                    <DescriptionProyect descriptionData={projects[key]} stackLabel={stackLabel} />
-                  </CustomModal>
-                </div>
-              </div>
-            ))
-          }      
+                <DescriptionProject
+                  descriptionData={projects[key]}
+                  stackLabel={stackLabel}
+                />
+              </Modal>                
+            </ProjectCard>
+          ))
+        }      
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
 export default Projects;

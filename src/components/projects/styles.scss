@@ -2,121 +2,181 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.project__content {
-  width: 100%;
-  margin-top: 30px;
-  display: grid;
-  gap: 15px;
+.projects {
+  padding: 2.5rem 0;
 
-  &-item {
-    height: 30%;
+  &-header {
+    text-align: center;
+  }
+
+  &-title {
+    font-weight: bold;
+  }
+
+  &-divider {
+    @include underline();
+  }
+
+  &-grid {
+    display: grid;
     width: 100%;
-    min-height: 200px;
-    max-height: 350px;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-
-    &:hover {
-      .project__content-item__img {
-        opacity: 0;
-      }
-
-      .project__content-item__text-head {
-        top: 20%;
-        opacity: 1;
-        z-index: 2;
-      }
-
-      .project__content-item__text-footer {
-        bottom: 20%;
-        opacity: 1;
-        z-index: 2;
-      }
-    }
-
-    &__img {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      transition: opacity 0.5s;
-    }
-
-    &__text {
-      position: relative;
-      height: 100%;
-      width: 100%;
-
-      &-head {
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        transition: .3s;
-
-        &-title--bold {
-          font-size: 1.1rem;
-          font-weight: 600;
-        }
-
-        &-title {
-          color: $component-background;
-          font-weight: 300;
-        }
-      }
-
-      &-footer {
-        width: 200px;
-        padding: 10px;
-        bottom: 0;
-        opacity: 0;
-        position: absolute;
-        text-align: center;
-        border-radius: 6px;
-        transition: .3s;
-        background: $component-background;
-        color: $white;
-      }
-    }
-  }
-
-  @include tablet {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include desktop {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 }
 
-.description {
+.project-card {
+  position: relative;
+  min-height: 12.5rem;
+  max-height: 21.9rem;
+  border-radius: .62rem;
+  overflow: hidden;
+  cursor: pointer;
   @include display-flex(center);
   flex-direction: column;
-  margin: 30px 0 0;
+  box-shadow: $box-shadow-elevated rgba($highlight-color, .1);
+  transition: box-shadow 0.3s ease;
 
-  &__head {
-    @include display-flex(center);
-    flex-direction: column;
-    margin-bottom: 20px;
+  &:hover {
+    box-shadow: $box-shadow-elevated rgba($highlight-color, .3);
 
-    &-title {
-      color: $component-background;
-      margin-bottom: 2px;
+    .project-card-image {
+      opacity: 0;
+    }
+
+    .project-card-details {
+      top: 5%;
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .project-footer {
+      bottom: 15%;
+      opacity: 1;
+      z-index: 2;
     }
   }
 
-  &__content {
-    text-align: justify;
+  &-details {
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    transition: .3s;
   }
 
-  &__footer {
-    width: 100%;
-    font-weight: 600;
+  &-job {
+    margin: 0;
+    @include text(1.125rem, 600);
+  }
+
+  &-position {
+    @include text(1rem, 500);
+  }
+
+  &-date {
+    margin: 0;
+    @include text(1rem, lighter, normal, $highlight-color);
+  }
+
+  &-image {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    transition: opacity 0.5s ease;
+  }
+}
+
+.project-footer {
+  width: 12.5rem;
+  padding: .62rem;
+  bottom: 0;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  border-radius: .37rem;
+  background: $highlight-color;
+  color: white;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.project-description {
+  margin: 1.8rem 0;
+
+  &-head {
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  &-title {
+    font-weight: bold;
+    margin: 0;
+    color: $highlight-color;
+
+    &--lighter {
+      @include text(1rem);
+      color: $text-primary-color;
+      font-weight: 300;        
+    }
+  }
+
+  &-content {
+    @include text(1rem);
+    text-align: justify;
+    color: $text-primary-color;
+    white-space: pre-line;
+    
+    &::after {
+      content: '';
+      white-space: pre;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &-footer {
+    @include text(1rem, 600);
 
     &--lighter { 
-      font-weight: lighter;        
+      font-weight: 300;        
     }
+  }
+}
+
+
+@include tablet {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);    
+  }
+
+  .project-description-title--lighter,
+  .project-description-content,
+  .project-description-footer,
+  .project-card-position,
+  .project-card-date {
+    font-size: 1.125rem;
+  }
+
+  .project-card-job {
+    font-size: 1.25rem;
+  }
+}
+
+@include desktop {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);    
+  }
+
+  .project-description-title--lighter,
+  .project-description-content,
+  .project-description-footer,
+  .project-card-position,
+  .project-card-date {
+    font-size: 1.25rem;
+  }
+
+  .project-card-job {
+    font-size: 1.3rem;
   }
 }
