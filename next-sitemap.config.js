@@ -1,16 +1,10 @@
 /** @type {import('next-sitemap').IConfig} */
 export default {
-  siteUrl: 'https://andrea-hernandez-dev.vercel.app/',
+  siteUrl: 'https://andrea-hernandez-dev.vercel.app',
   generateRobotsTxt: true,
+  exclude: [],
+  sitemapSize: 1,
   robotsTxtOptions: {
-    policies: [
-      { userAgent: '*', allow: '/' },
-    ],
-    additionalSitemaps: [
-      'https://andrea-hernandez-dev.vercel.app/sitemap.xml',
-    ],
-  },
-  sitemapSize: 5000,
-  priority: 0.7,
-  changefreq: 'monthly',
+    policies: [{ userAgent: '*', allow: '/' }],
+  }
 };
