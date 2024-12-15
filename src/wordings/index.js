@@ -2,13 +2,14 @@ const wordings = {
   about: {
     title: 'Acerca de mí',
     profession: 'Front End Developer',
-    content: (profession) => `Soy Andrea Hernandéz, ${profession} con 3 años de experiencia. Me apasiona crear interfaces interactivas y atractivas.
-    /nConvierto diseños creatvos en código limpio y eficiente utilizando HTML, CDD y Javascript, junto con frameworks como React y Next.js. Tengo experiencia en la integración de APIs y la optimizacion del rendimiento en sitios webs.
-    /nSiempre busco nuevas oportunidades para crecer y mantenerme actualizada. Me considero una comunicadora efectiva y disfruto colaborar en equipos dinámicos y mutidisciplinarios.`,
+    content:  `con más de 3 años de experiencia creando interfaces interactivas y atractivas, disfruto trabajar en equipos dinámicos y multidisciplinarios, aportando soluciones innovadoras y colaborativas. 
+    \nMe destaco por convertir diseños creativos en código limpio y eficiente utilizando HTML, CSS y JavaScript, además de frameworks como React y Next.js.
+    \nCuento con experiencia en la integración de APIs y en la optimización de rendimiento de sitios web. Actualmente, me encuentro en búsqueda de una nueva posición laboral donde pueda contribuir con mi conocimiento y continuar creciendo profesionalmente.
+    `,
     options: {
       contact: 'Contactame',
       projects: 'Ver proyectos',
-    }
+    },
   },
   navbar: {
     initial: 'Inicio',
@@ -16,12 +17,13 @@ const wordings = {
     skill: 'Skill',
     projects: 'Proyectos',
     cv: 'Currículum',
-    contact: 'Contacto'
+    contact: 'Contacto',
+    cv: 'Descargar CV',
   },
   home: {
     title: '!Hola! Soy Andrea',
     subtitle: 'Ssr. Front End Developer',
-    button: 'Currículum'
+    cv: 'Currículum',
   },
   skill: {
     title: 'Skill',
@@ -32,6 +34,7 @@ const wordings = {
         items: [
           'Javascript',
           'TypeScript',
+          'Python',
           'HTML',
         ],
       },
@@ -39,10 +42,9 @@ const wordings = {
         title: 'Frameworks',
         items: [
           'React',
-          'Redux',
           'NextJs',
+          'Redux',
           'NodeJs',
-          'Express',
         ],
       },
       styles: {
@@ -50,62 +52,75 @@ const wordings = {
         items:[
           'CSS',
           'Sass',
-          'Bootstrap',
-          'Material-UI',          
+          'Tailwind',
+          'Material-UI',  
         ],
       },
-      testing: {
-        title: 'Testing',
-        items: ['Jest'],
-      },
-      analysis: {
-        title: 'Análisis y seguimiento',
-        items: ['Google Analytics'],
-      },
-      graphics: {
-        title: 'Gráficos',
-        items: ['ChartJS']
+      others: {
+        title: 'Otros',
+        items: ['Jest', 'Cypress', 'Google Analytics'],
       },
     },
     tools: {
       title: 'Herramientas',
       items: [
         'GitHub',
-        'Trello',
+        'Figma',
         'Jira',
         'Scrum',
-        'Slack'
-      ]
-    }
+      ],
+    },
   },
   projects: {
-    title: 'Ultimos Proyectos',
+    title: 'Proyectos Recientes',
     learnMore: 'Leer más',
-    stackLabel: 'Tecnologías principales',
+    stackLabel: 'Tecnologías:',
     projects: {
+      adGoat: {
+        job: 'AdGoat',
+        position: 'Ssr Front End',
+        date: 'abr. 2023 - actualmente',
+        subtitle: 'Ad Tech',
+        stackTechnology: 'NextJs, TypeScript, Tailwind, Nodejs.',
+        description: `Ofertas365: Plataforma de catálogos, integracions de Ads y actualizaciones diarias automatizadas.\n
+        Tus Préstamos Top: Web para comparar préstamos personales, filtros personalizados e integración con APIs financieras para garantizar información precisa y en tiempo real.`,
+      },
       ficohsa: {
-        title: 'Fichosa',
-        date: 'Oct. 2023 - actualmente',
+        job: 'Fichosa',
+        position: 'Ssr Front End',
+        date: 'Oct. 2023 - abr. 2023',
         subtitle: 'Grupo Financiero',
-        stackTechnology: 'NextJs, TS, Webpack',
+        stackTechnology: 'NextJs, TypeScript, Martial-UI, Webpack.',
         description: 'Desarrollo de una biblioteca de componentes transversales para los demás squads del banco y creación de componentes funcionales (micro front ends) fundamentales para optimizar el tiempo de nuevos desarrollos y mantener la consistencia en el proyecto.',
       },
       mercadoLibre: {
-        title: 'Mercado Libre',
-        date: 'Nov. 2021- Oct. 2023',
+        job: 'Mercado Libre',
+        position: 'Ssr Software Engineer',
+        date: 'Nov. 2021 - Oct. 2023',
         subtitle: 'E-commerce',
-        stackTechnology: 'React, NextJs, JS, TS, Chart.js',
+        stackTechnology: 'React, NextJs, JS, TS, Chart.js.',
         description: 'Desarrollo de un sistema de logistica para analisis y creacion de informes mediante el uso de tarjetas, tablas y graficas, permitiendo a las operaciones tomar acciones estrategicas para alcanzar los objetivos establecidos.',
       },
-      famosos: {
-        title: 'Famosos.com',
-        date: '2021',
-        subtitle: 'E-commerce',
-        stackTechnology: 'Nextjs, React, TS, JS',
-        description: 'Desarrollo de una plataforma de comercio digital con pasarela de pago, mediante la cual el usuario puede adquirir videos personalizados o autografos digitales de sus artistas preferidos, y los artistas pueden ver el estatus de sus pedidos y pagos.',
+    },
+  },
+  contact: {
+    title: '¿Buscas talento en Front End?',
+    content: 'Con más de 3 años de experiencia creando soluciones interactivas y escalables, estoy lista para un nuevo desafío donde pueda aportar mis habilidades y seguir creciendo profesionalmente.\n\nSi buscas talento comprometido, ¡déjame un mensaje y conectemos!',
+    form: {
+      name: 'Nombre',
+      email: 'Email',
+      message: 'Mensaje',
+      send: 'Enviar',
+      alert: {
+        success: '¡Tu mensaje fue enviado! 🚀',
+        error: 'Hubo un error al enviar tu mensaje.\nPor favor, inténtalo nuevamente. 🙁',
       },
-    }
-  }
+    },
+    channels: {
+      strong: '¿Te apetece socializar?',
+      content: '¡Encuéntrame también en estos espacios online!',
+    },
+  },
 };
 
 export default wordings;
