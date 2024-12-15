@@ -3,49 +3,110 @@
 @import '../../styles/mixins';
 
 .skill {
-  .icon {
-    color: $title-color;
-    font-size: 30px;
-    
-    svg {
-      filter: drop-shadow(1px 1px 1px $component-background);
-    }
+  padding: 2.5rem 0;
+}
+
+.skill-main-title {
+  font-weight: bold;
+}
+
+.skill-divider {
+  @include underline();
+}
+
+.skill-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.skill-section {
+  text-align: center;
+}
+
+.skill-section-title {
+  font-weight: bold;
+  margin-bottom: 1.8rem;
+}
+
+.skill-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill-list {
+  width: 100%;
+}
+
+.skill-list-title {
+  @include text(1.25rem);
+  margin-bottom: 1.25rem;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.skill-item {
+  @include display-flex(center);
+  flex-direction: column;
+}
+
+.skill-icon {
+  @include text(2rem);
+
+  svg {
+    filter: drop-shadow(0 1px 2px rgba($highlight-color, .3));
+  }
+}
+
+.skill-title {
+  @include text(1rem);
+}
+
+@include tablet {
+  .skill-title {
+    font-size: 1.125rem;
   }
 
-  &__content {
-    margin-top: 30px;
-    text-align: center;
-
-    &-info {
-      @include display-flex(center);
-      flex-direction: column;
-      margin-bottom: 30px;
-      width: 100%;
-
-      &-title {
-        margin-bottom: 15px;
-      }
-
-      &-item {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
-        gap: 12px;
-        font-weight: 500;
-      }
-    }
+  .skill-list-title {
+    font-size: 1.3rem;
+    text-align: start;
   }
 
-  @include tablet {
-    &__content-info-item {
-      grid-template-columns: repeat(5, minmax(100px, 1fr));
-      column-gap: 15px;
-      row-gap: 20px;
-    }
+  .skill-list {
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(min-content, .3fr) 1fr;
   }
 
-  @include desktop {
-    &__content-info-item {
-      column-gap: 10px;
-    }
+  .skill-grid {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .skill-icon {
+    font-size: 3rem;
+  }
+}
+
+@include desktop {
+  .skill-title {
+    font-size: 1.25rem;
+  }
+
+  .skill-list-title {
+    font-size: 1.35rem;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .skill-icon {
+    font-size: 4rem;
   }
 }
