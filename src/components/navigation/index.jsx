@@ -1,73 +1,48 @@
 'use client';
-import React, { useState } from 'react';
-import wordings from '../../wordings';
-import './styles.scss'
+
+import { useState, useEffect } from 'react';
+import Menu from '@components/menu';
+import HamburgerButton from '@ui/hamburgerButton';
 import classNames from 'classnames';
+import Link from 'next/link';
+import './styles.scss';
 
 const Navigation = () => {
+  const [scrollY, setScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-  const handleDropdown = () => setIsOpen(!isOpen)
+  const handleDropdown = () => setIsOpen((prev) => !prev);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY((prevScrollY) => {
+        const currentScrollY = window.scrollY;
+        setIsVisible(!(currentScrollY > prevScrollY && currentScrollY > 50));
+        return currentScrollY;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className='header'>
+    <header
+      aria-label='navigation'
+      className={classNames('header', {
+        'header--hidden': !isVisible,
+        'header--scroll': scrollY > 2,
+      })}
+    >
       <nav className='navbar'>
-        <div className='navbar__header'>
-          <button className="navbar-brand" href="">A.</button>  
-          <button
-            data-toggle="collapse"
-            aria-expanded={isOpen}
-            onClick={handleDropdown}
-            className={classNames(
-              'navbar__toggle',
-              { 'open': isOpen }
-            )}
-          >
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>                        
-          </button>        
+        <div className='navbar-header'>
+          <Link className='navbar-brand' href='#' aria-label='go to home'>
+            A
+          </Link>
+          <HamburgerButton handleDropdown={handleDropdown} isOpen={isOpen} />
         </div>
-        <div
-          aria-expanded={isOpen}
-          className={classNames(
-            'navbar__collapse',
-            { 'in': isOpen }
-          )} 
-        >
-          <ul className="navbar__menu" role='menu'>
-              <li role='menuitem'>
-                <a title="Home" href="#home" onClick={handleDropdown} className="navbar-link">
-                  {wordings.navbar.initial}
-                </a>
-              </li>
-              <li role='menuitem'>
-                <a title="About Us" href="#about" onClick={handleDropdown} className="navbar-link">
-                  {wordings.navbar.about}
-                </a>
-              </li>
-              <li role='menuitem'>
-                <a title="About Us" href="#skill" onClick={handleDropdown} className="navbar-link">
-                  {wordings.navbar.skill}
-                </a>
-              </li>
-              <li role='menuitem'>
-                <a title="Projects" href="#projects" onClick={handleDropdown} className="navbar-link">
-                  {wordings.navbar.projects}
-                </a>
-              </li>
-              <li role='menuitem'>
-                <a title="Experiences" href="#curriculum" onClick={handleDropdown} className="navbar-link">
-                  {wordings.navbar.experiences}
-                </a>
-              </li>
-              <li role='menuitem'>
-                <a title="Contact Us" href="#contact" onClick={handleDropdown} className="navbar-link">
-                  {wordings.navbar.contact}
-                </a>
-              </li>
-            </ul>
-        </div>
+        <Menu handleDropdown={handleDropdown} isOpen={isOpen} />
       </nav>
     </header>
   );

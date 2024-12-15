@@ -2,140 +2,68 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+.navbar {
+  width: 100%;
+  padding: 0;
+
+  &-header {
+    width: 100%;
+    @include display-flex(space-between, center);
+  }
+}
+
 .header {
   top: 0;
   z-index: 99;
-  width: 100%;
-  max-width: 1220px;
-  padding: 1rem 1.3rem;
+  min-width: 100%;
+  max-width: 76.2rem;
+  padding: 1rem 2rem .5rem;
   position: fixed;
   @include display-flex(center);
   background: rgb(245,236,236);
   background: linear-gradient(0deg, $main-background 0%, rgba(245,236,236,1) 55%);
+  transition: all 0.3s ease;
 
   a {
-    color: $title-color;
+    color: $text-primary-color;
+  }
+
+  &--scroll {
+    box-shadow: 0 .43rem .8rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &--hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
+  }
+}
+
+@include tablet {
+  .header {
+    padding: .5rem 3rem .5rem;
+    background: $main-background;
+  }
+
+  .toggle {
+    display: none;
+
+    &:active.open {
+      height: auto;
+    }
   }
 
   .navbar {
-    width: 100%;
-    padding: 0;
-    @include text(1rem, 500, normal, $title-color);
+    @include display-flex(space-between, center);
 
-    &__toggle {
-      gap: .5rem;
-      border: none;
-      display: flex;
-      background: none;
-      flex-direction: column;
-
-      .icon-bar {
-        height: 2px;
-        width: 35px;
-        display: block;
-        border-radius: 5px;
-        transition: all .5s;
-        transform-origin: left;
-        background: $component-background;
-      }
+    &-header {
+      width: auto;
+      display: inline-block;
     }
+  } 
+}
 
-    &__toggle:active,
-    .open {
-      .icon-bar:first-child {
-        transform: rotate(35deg);
-      }
-
-      .icon-bar:nth-child(2) {
-        opacity: 0;
-      }
-
-      .icon-bar:last-child {
-        transform: rotate(-37deg);
-      }
-
-      .navbar__collapse {
-        display: block;
-      }
-    }
-  
-    &__header {
-      width: 100%;
-      @include display-flex(space-between, center);
-    }
-  
-    &-brand {
-      @include text(2.4rem, bold, normal, $component-background);
-    }
-
-    &__menu {
-      gap: 20px;
-      height: 100%;
-      margin: 0;
-      padding: 1rem 0;
-      color: $title-color;
-      @include display-flex(flex-start, flex-start);
-      flex-direction: column;
-    }
-  
-    &__collapse {
-      height: 0;
-      overflow-y: hidden;
-      transition: all 0.4s ease;
-    }
-    
-    .in {
-      transition: all 0.4s ease;
-      height: 280px;
-    }
-  }
-
-  .in & {
-    background: linear-gradient(180deg, rgba(245,236,236,1) 83%, rgba(0,212,255,0) 100%);
-  }
-
-  @include tablet {
-    padding: 1rem 2.5rem;
-    
-    .navbar-brand {
-      @include text(3rem, bold, normal, $component-background);
-    }
-  }
-
-  @include desktop {
-    padding: 1rem 3rem;
-    background: $main-background;
-  
-    .navbar {
-      @include display-flex(space-between, baseline);
-
-      &__collapse {
-        width: 65%;
-        height: auto;
-        display: inline-block;
-      }
-
-      &__toggle {
-        display: none;
-      }
-
-      .navbar__menu-container,
-      .open {
-        height: auto;
-      }
-
-      &-brand {
-        @include text(3.3rem, bold, normal, $component-background);
-      }
-
-      &__header {
-        width: auto;
-        display: inline-block;
-      }
-
-      &__menu {
-        @include display-flex(space-between, center);
-      }
-    } 
+@include desktop {
+  .header {
+    padding: .5rem 4rem .5rem;
   }
 }
