@@ -1,0 +1,70 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.menu-collapse {
+  height: 0;
+  width: 100%;
+  overflow-y: hidden;
+  transition: all 0.4s ease;
+
+  &-open {
+    height: 17.5rem;
+  }
+}
+
+.menu-item {
+  &-link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    @include text(1rem);
+
+    &:hover,
+    &:focus {
+      color: $highlight-color; 
+    }
+  }
+
+  &-btn {
+    border: none;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    background-color: $highlight-color;
+    @include text(1rem, normal, normal, white !important);
+  }
+}
+
+.menu-list {
+  gap: 1.25rem;
+  margin: 0;
+  height: 100%;
+  padding: 1rem 0;
+  list-style: none;
+  color: $text-primary-color;
+  @include display-flex(flex-start, center);
+  flex-direction: column;
+  @include text(1rem, 500, normal, $text-primary-color);
+}
+
+@include tablet {
+  .menu-item-link {
+    @include text(1.125rem);
+  }
+
+  .menu-list {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .menu-collapse {
+    height: auto;
+    display: inline-block;
+  }
+}
+
+@include desktop {
+  .menu-item-link {
+    @include text(1.25rem);
+  }
+}
