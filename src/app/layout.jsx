@@ -35,6 +35,9 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <html lang='es'>
+    <head>
+      <meta name='google-site-verification' content='k6bxfjL5kiTwNZ7Wf22So7HL7jJpmXAsv-vHI4f06oo' />
+    </head>
     <body>
       <Script
         id='structured-data-person'
