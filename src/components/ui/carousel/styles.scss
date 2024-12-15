@@ -1,33 +1,35 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/carousel";
 @import '../../../styles/breakpoints';
-@import '../../../styles/mixins';
 
-.carousel__item {
-  position: relative;
-  width: 100%;
-  min-height: 200px;
-  height: auto;
+.carousel {
+  &-item {
+    width: 100%;
+    position: relative;
+    min-height: 12.5rem;
+  }
 
   &-img {
     object-fit: cover;
     object-position: top;
   }
+}
 
-  @include tablet {
-    min-height: 250px;
-
-    &-img {
-      object-fit: contain;
-      object-position: top;
-    }
+@include tablet {
+  .carousel-item {
+    min-height: 15.6rem;
   }
 
-  @include desktop {
-    min-height: 330px;
+  .carousel-img {
+    object-fit: contain;
+    object-position: top;
+  }
+}
 
-    &-img {
-      object-fit: contain;
-      object-position: top;
-    }
+@include desktop {
+  .carousel-item {
+    min-height: 20.6rem;
   }
 }

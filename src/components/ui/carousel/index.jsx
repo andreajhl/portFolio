@@ -4,22 +4,21 @@ import './styles.scss';
 
 const Carousel = ({ slides }) => (
   <CarouselBoot
+    indicators
     controls={false}
-    indicators={true}
     className='carousel'
   >
-    {
-      slides.map((slide, index) => (
-        <CarouselBoot.Item key={index} className='carousel__item'>
-          <Image
-            className='carousel__item-img'
-            src={slide.url}
-            alt={slide.alt}
-            fill
-          />
-        </CarouselBoot.Item>
-      ))
-    }
+    {slides.map((slide, index) => (
+      <CarouselBoot.Item key={index} className='carousel-item'>
+        <Image
+          fill
+          src={slide.url}
+          priority={!index}
+          className='carousel-img'
+          alt={slide.alt || `Slide ${index + 1}`}
+        />
+      </CarouselBoot.Item>
+    ))}
   </CarouselBoot>
 );
 
