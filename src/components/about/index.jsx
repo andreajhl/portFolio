@@ -1,23 +1,29 @@
-import React from 'react';
+import wordings from '@wordings';
+import Link from 'next/link';
 import './styles.scss';
-import wordings from '@/wordings';
 
 const About = () => {
   const { about: { title, content, options, profession } } = wordings;
 
   return (
-    <section className='about section-container'>
-      <h2 className='section-title'>{title}</h2>
-      <span className='section-line-title'></span>
-      <div className='about__content'>
-        <p className='about__content-text'>{(content(profession))}</p>
-        <div className='about__content-option'>
-          <a className='about__content-option-item about__content-option-item--contact' href='#contact'>{options.contact}</a>
-          <a className='about__content-option-item about__content-option-item--projects' href='#projects'>{options.projects}</a>
+    <div className='about'>
+      <h2 className='about-title'>{title}</h2>
+      <hr aria-hidden="true" className='about-title-line' />
+      <div className='about-content'>
+        <p className='about-text'>
+          <strong>{profession}</strong> {content}
+        </p>
+        <div className='about-options'>
+          <Link className='about-option about-option-contact' href='#contact'>
+            {options.contact}
+          </Link>
+          <Link className='about-option about-option-projects' href='#projects'>
+            {options.projects}
+          </Link>
         </div>
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
 export default About;

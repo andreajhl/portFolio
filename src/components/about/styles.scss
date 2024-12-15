@@ -3,48 +3,70 @@
 @import '../../styles/mixins';
 
 .about {
-  &__content {
-    margin-top: 30px;
-    
-    &-text {
-      text-align: justify;
-      color: $title-color;
+  padding-top: 0;
+}
 
-      &::before {
-        content: '\A';
-        white-space: pre;
-      }
-    }
+.about-title {
+  font-weight: bold;
+}
 
-    &-option {
-      margin-top: 80px;
-      max-width: 400px;
-      @include display-flex(center);
+.about-title-line {
+  @include underline();
+}
 
-      &-item {
-        height: 50px;
-        width: 45%;
-        line-height: 46px;
-        border-radius: 6px;
-        margin-right: 10px;
-        text-transform: capitalize;
-        @include display-flex(center);
-        @include border(all, $component-background, 2px);
+.about-content {
+  text-align: justify;
+  white-space: pre-line;
+}
 
-        &--contact {
-          background: $component-background;
-          @include text(14px, 500, normal, $white);
-        }
+.about-text {
+  @include text(1rem);
 
-        &--projects {
-          background: $white;
-          @include text(14px, 500, normal, $component-background);
-        }
-      }
-    }
+  &::after {
+    content: '';
+    white-space: pre;
+    display: block;
+    margin-bottom: 1rem;
   }
+}
 
-  @include desktop {
-    padding-top: 0;
+.about-options {
+  margin-top: 2.5rem;
+  max-width: 25rem;
+  @include display-flex(center);
+}
+
+.about-option {
+  height: 3.1rem;
+  width: 45%;
+  font-size: 1rem;
+  border-radius: .37rem;
+  margin-right: .625rem;
+  text-transform: capitalize;
+  @include display-flex(center);
+  @include border(all, $highlight-color, 2px);
+}
+
+.about-option-contact {
+  background: $highlight-color;
+  @include text(.8, 500, normal, white);
+}
+
+.about-option-projects {
+  background: white;
+  @include text(.8, 500, normal, $highlight-color);
+}
+
+@include tablet {
+  .about-text,
+  .about-option {
+    font-size: 1.125rem;
+  }
+}
+
+@include desktop {
+  .about-text,
+  .about-option {
+    font-size: 1.25rem;
   }
 }
