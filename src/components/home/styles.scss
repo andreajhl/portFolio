@@ -4,65 +4,95 @@
 
 .home {
   width: 100%;
-  height: 100vh;
-  padding-top: 190px;
-  margin-bottom: 130px;
+  height: max-content;
+  padding-top: 11.8rem;
+}
 
-  &-container {
-    &__wording {
-      &-name {
-        @include text(37px, 600, 45px, $title-color);
-        margin-bottom: 40px; 
-      }
-  
-      &-position {
-        @include text(25px, normal, 30px, $subtitle-color);
-        margin-bottom: 35px;
-      }
-  
-      &-curriculum {
-        @include text(17px, bold, 40px, $white);
-        border: 1px solid $section-background;
-        background: $component-background;
-        border-radius: 8px;
-        width: 250px;
-        padding: 10px;
-        letter-spacing: 2px;
-      }
-    }
+.home-container,
+.home-text {
+  @include display-flex(center);
+  flex-direction: column;
+}
 
-    &__img {
-      margin-top: 100px;
-      @include display-flex(center);
-  
-      .personal-img {
-        min-height: 300px;
-        width: 80%;
-      }
-    }
+.home-name {
+  @include text(2.3rem, 600, 2.8rem, $text-primary-color);
+  margin-bottom: 1.8rem;
+}
+
+.home-position {
+  @include text(1.5rem, normal, 1.8rem, $text-secondary-color);
+  margin-bottom: 2.1rem;
+}
+
+.home-curriculum {
+  @include text(1.125rem, bold, 2.5rem, white);
+  border: 1px solid $base-color;
+  background: $highlight-color;
+  border-radius: .5rem;
+  letter-spacing: .1rem;
+  text-align: center;
+  padding: .6rem;
+  width: 100%;
+}
+
+.home-img {
+  width: 80%;
+  height: 25rem;
+  overflow: hidden;
+  position: relative;
+  margin-top: 6.2rem;
+  border-radius: 50%;
+  @include display-flex(center);
+}
+
+.home-img::after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+
+.home-personal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@include tablet {
+  .home-container {
+    @include display-flex(flex-start);
   }
 
-  @include tablet {
-    padding-top: 50%;
-  
-    &-container {
-      @include display-flex(center);
-  
-      &__wording {
-        min-width: 50%;
-      }
-    }
+  .home-curriculum {
+    width: 15rem;
   }
-  
-  @include desktop {
-    padding-top: 20%;
-  
-    &-container {
-      @include display-flex(center);
-  
-      &__wording {
-        min-width: 50%;
-      }
-    }
+
+  .home-text {
+    min-width: 60%;
+  }
+
+  .home-img {
+    margin-top: 0;
+    height: 18.7rem;
+    width: 12.5rem;
+  }
+}
+
+@include desktop {
+  .home-text {
+    min-width: 50%;
+  }
+
+  .home-img {
+    height: 25rem;
   }
 }
