@@ -6,19 +6,21 @@ import Skill from '@components/skill';
 
 const Portfolio = () => (
   <main className='main'>
-    <section id='home'>
+    <section id='home' className='main-setion'>
       <Home />
     </section>
-    <section id='about'>
+    <section id='about' className='main-setion'>
       <About />
     </section>
-    <section id='skill'>
-      <Skill />
-    </section>
-    <section id='projects'>
+    <div className="wave-section">
+      <div className='main-setion'>
+        <Skill />
+      </div>
+    </div>
+    <section id='projects' className='main-setion'>
       <Projects />
     </section>
-    <section id='contact'>
+    <section id='contact' className='main-setion'>
       <Contact />
     </section>
   </main>
