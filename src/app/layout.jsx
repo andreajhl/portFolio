@@ -17,6 +17,9 @@ export const metadata = {
     'software engineer',
     'web development',
   ],
+  icons: {
+    icon: '/assets/svg/brand.svg',
+  },
   openGraph: {
     title: 'Andrea Hernandez | Front End Developer',
     description: 'Descubre mi trayectoria como Front End Developer: más de 3 años desarrollando interfaces web modernas y optimizadas con React y Next.js.',
