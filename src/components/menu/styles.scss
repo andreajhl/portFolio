@@ -9,7 +9,7 @@
   transition: all 0.4s ease;
 
   &-open {
-    height: 17.5rem;
+    height: max-content;
   }
 }
 
@@ -51,6 +51,12 @@
   .menu-item-link {
     @include text(1.125rem);
   }
+}
+
+@include desktop {
+  .menu-item-link {
+    @include text(1.25rem);
+  }
 
   .menu-list {
     flex-direction: row;
@@ -60,11 +66,5 @@
   .menu-collapse {
     height: auto;
     display: inline-block;
-  }
-}
-
-@include desktop {
-  .menu-item-link {
-    @include text(1.25rem);
   }
 }

@@ -6,22 +6,18 @@ import Menu from '@components/menu';
 import HamburgerButton from '@ui/hamburgerButton';
 import classNames from 'classnames';
 import Link from 'next/link';
+import Image from 'next/image';
 import './styles.scss';
 
 const Navigation = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
 
   const handleDropdown = () => setIsOpen((prev) => !prev);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY((prevScrollY) => {
-        const currentScrollY = window.scrollY;
-        setIsVisible(!(currentScrollY > prevScrollY && currentScrollY > 50));
-        return currentScrollY;
-      });
+      setScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -32,14 +28,18 @@ const Navigation = () => {
     <header
       aria-label='navigation'
       className={classNames('header', {
-        'header--hidden': !isVisible,
         'header--scroll': scrollY > 2,
       })}
     >
       <nav className='navbar'>
         <div className='navbar-header'>
           <Link className='navbar-brand' href='#' aria-label='go to home'>
-            A
+            <Image
+              fill
+              alt='logo'
+              src='/assets/svg/brand.svg'
+              className='brand'
+            />
           </Link>
           <HamburgerButton handleDropdown={handleDropdown} isOpen={isOpen} />
         </div>
