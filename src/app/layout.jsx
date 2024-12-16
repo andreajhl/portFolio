@@ -24,8 +24,8 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/assets/img/portfolio-thumbnail.png',
-        width: 1200,
+        url: '/assets/img/brand.png',
+        width: 630,
         height: 630,
         alt: 'Andrea Hernandez Front End Developer Portfolio',
       },
