@@ -18,7 +18,7 @@ const wordings = {
     projects: 'Proyectos',
     cv: 'Currículum',
     contact: 'Contacto',
-    cv: 'Descargar CV',
+    cv: 'Curriculum',
   },
   home: {
     title: '!Hola! Soy Andrea',
@@ -26,72 +26,39 @@ const wordings = {
     cv: 'Currículum',
   },
   skill: {
-    title: 'Skill',
-    tech: {
-      title: 'Tecnologías',
-      languages: {
-        title: 'Lenguajes',
-        items: [
-          'Javascript',
-          'TypeScript',
-          'Python',
-          'HTML',
-        ],
-      },
-      frameworks: {
-        title: 'Frameworks',
-        items: [
-          'React',
-          'NextJs',
-          'Redux',
-          'NodeJs',
-        ],
-      },
-      styles: {
-        title: 'Librerías de CSS',
-        items:[
-          'CSS',
-          'Sass',
-          'Tailwind',
-          'Material-UI',  
-        ],
-      },
-      others: {
-        title: 'Otros',
-        items: ['Jest', 'Cypress', 'Google Analytics'],
-      },
-    },
-    tools: {
-      title: 'Herramientas',
-      items: [
-        'GitHub',
-        'Figma',
-        'Jira',
-        'Scrum',
-      ],
-    },
+    title: 'Principales Skill',
+    content: [
+      'Javascript',
+      'TypeScript',
+      'React',
+      'NextJs',
+      'HTML',
+      'Sass',
+      'Tailwind',
+      'Jest',
+    ],
   },
   projects: {
-    title: 'Proyectos Recientes',
+    title: 'Trabajos Recientes',
     learnMore: 'Leer más',
     stackLabel: 'Tecnologías:',
     projects: {
       adGoat: {
         job: 'AdGoat',
-        position: 'Ssr Front End',
+        position: 'Ssr Front End Developer',
         date: 'abr. 2023 - actualmente',
         subtitle: 'Ad Tech',
         stackTechnology: 'NextJs, TypeScript, Tailwind, Nodejs.',
-        description: `Ofertas365: Plataforma de catálogos, integracions de Ads y actualizaciones diarias automatizadas.\n
-        Tus Préstamos Top: Web para comparar préstamos personales, filtros personalizados e integración con APIs financieras para garantizar información precisa y en tiempo real.`,
+        description: `Ofertas365: Desarrollé una plataforma de catálogos integrada con anuncios de Google Ads y AdSense, implementando estrategias de SEO y mejoras en tiempos de carga para optimizar el rendimiento de la web.\n
+        Tus Préstamos Top: Desarrollé una web para la comparación de préstamos personales incluyendo filtros personalizados. Además, realicé optimizaciones enfocadas en SEO y accesibilidad para cumplir con los estándares web modernos.`,
       },
       ficohsa: {
         job: 'Fichosa',
-        position: 'Ssr Front End',
+        position: 'Ssr Front End Developer',
         date: 'Oct. 2023 - abr. 2023',
         subtitle: 'Grupo Financiero',
         stackTechnology: 'NextJs, TypeScript, Martial-UI, Webpack.',
-        description: 'Desarrollo de una biblioteca de componentes transversales para los demás squads del banco y creación de componentes funcionales (micro front ends) fundamentales para optimizar el tiempo de nuevos desarrollos y mantener la consistencia en el proyecto.',
+        description: 'Desarrolle una biblioteca de componentes transversales para los demás squads del banco y creación de componentes funcionales (micro front ends) fundamentales para optimizar el tiempo de nuevos desarrollos y mantener la consistencia en el proyecto.',
       },
       mercadoLibre: {
         job: 'Mercado Libre',
@@ -99,7 +66,7 @@ const wordings = {
         date: 'Nov. 2021 - Oct. 2023',
         subtitle: 'E-commerce',
         stackTechnology: 'React, NextJs, JS, TS, Chart.js.',
-        description: 'Desarrollo de un sistema de logistica para analisis y creacion de informes mediante el uso de tarjetas, tablas y graficas, permitiendo a las operaciones tomar acciones estrategicas para alcanzar los objetivos establecidos.',
+        description: 'Desarrolle un sistema de logistica para analisis y creacion de informes mediante el uso de tarjetas, tablas y graficas, permitiendo a las operaciones tomar acciones estrategicas para alcanzar los objetivos establecidos.',
       },
     },
   },
