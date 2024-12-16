@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import { projectImages } from '@constants/projects';
 import wordings from '@wordings';
+import Image from 'next/image';
 import './styles.scss';
 
 const Project = ({ job, position, date, description, stackTechnology, image, stackLabel }) => {
@@ -13,7 +13,7 @@ const Project = ({ job, position, date, description, stackTechnology, image, sta
           fill
           src={image.url}
           alt={image.alt}
-          className="project-banner-image"
+          className='project-banner-image'
         />
       </div>
       <div className='project-details'>

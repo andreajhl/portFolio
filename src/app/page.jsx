@@ -12,7 +12,7 @@ const Portfolio = () => (
     <section id='about' className='main-setion'>
       <About />
     </section>
-    <div className="wave-section">
+    <div className='wave-section'>
       <div className='main-setion'>
         <Skill />
       </div>
