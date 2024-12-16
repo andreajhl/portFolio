@@ -1,8 +1,10 @@
 import { createCustomError } from 'utils/error';
 
+const url = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const sendEmail = async (formData) => {
   try {
-    const response = await fetch('/api/email', {
+    const response = await fetch(`${url}/api/email`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
