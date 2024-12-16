@@ -34,6 +34,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .home-img {
@@ -54,9 +55,13 @@
   .home {
     padding-top: 8rem;
 
+    &-name {
+      margin-bottom: .4rem;
+    }
+
     &-container {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.3fr .7fr;
     }
   
     &-curriculum {
@@ -64,6 +69,7 @@
     }
   
     &-text {
+      text-align: left;
       min-width: 60%;
     }
   
@@ -76,9 +82,5 @@
 @include desktop {
   .home-text {
     min-width: 50%;
-  }
-
-  .home-container {
-    grid-template-columns: 1.3fr .7fr;
   }
 }

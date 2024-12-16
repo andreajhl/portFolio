@@ -21,7 +21,7 @@ const wordings = {
     cv: 'Curriculum',
   },
   home: {
-    title: '!Hola! Soy Andrea',
+    title: 'Soy Andrea Hernandez',
     subtitle: 'Ssr. Front End Developer',
     cv: 'Currículum',
   },
