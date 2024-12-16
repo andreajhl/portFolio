@@ -13,7 +13,7 @@ const Home = () => {
           <h2 className='home-name'>{title}</h2>
           <h4 className='home-position'>{subtitle}</h4>
           <Link
-            href='https://drive.google.com/file/d/1cwyPj3nJSE9oJQb6jS-AN6uX1Pzlp3Du/view?usp=sharing'
+            href='https://drive.google.com/file/d/19qNP3HJ0We_6zYTOlpVYo7qrvWzjGZRK/view?usp=sharing'
             rel='noopener noreferrer'
             aria-label='Go to curriculum'
             target='_blank'
