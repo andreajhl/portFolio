@@ -1,5 +1,5 @@
 import Form from '@components/form';
-import SocialLinks from '@components/socialLinks';
+import SocialLinks from '@components/networkLinks';
 import wordings from '@wordings';
 import './styles.scss';
 

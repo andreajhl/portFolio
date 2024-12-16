@@ -2,7 +2,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.social-links {
+.network-links {
   @include display-flex(center);
   flex-direction: column;
   gap: 1rem;
@@ -27,13 +27,13 @@
 }
 
 @include tablet {
-  .social-links {
+  .network-links-title {
     font-size: 1.125rem;
   }
 }
 
 @include desktop {
-  .social-links {
+  .network-links-title {
     font-size: 1.25rem;
   }
 }
