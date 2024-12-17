@@ -1,3 +1,4 @@
+import { CV_URL } from '@constants/networkLinks';
 import wordings from '@wordings';
 import classNames from 'classnames';
 import Link from 'next/link';
@@ -41,7 +42,7 @@ const Menu = ({ isOpen, handleDropdown }) => {
         ))}
         <li>
           <Link
-            href='https://drive.google.com/file/d/19qNP3HJ0We_6zYTOlpVYo7qrvWzjGZRK/view?usp=sharing'
+            href={CV_URL}
             rel='noopener noreferrer'
             aria-label='Go to curriculum'
             target='_blank'

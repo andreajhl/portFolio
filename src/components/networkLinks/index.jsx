@@ -1,3 +1,4 @@
+import { GITHUB_PROFILE_URL, CONTACT_EMAIL, LINKEDIN_PROFILE_URL } from '@constants/networkLinks';
 import { SiGithub, SiLinkedin, SiGmail } from '@ui/icons';
 import wordings from '@wordings/index';
 import Link from 'next/link';
@@ -13,7 +14,7 @@ const NetworkLinks = () => {
       </h4>
       <div className='network-links-icons'>
         <Link
-          href='https://github.com/andreajhl'
+          href={GITHUB_PROFILE_URL}
           rel='noopener noreferrer'
           aria-label='Visit my GitHub profile'
           className='network-links-icon'
@@ -22,7 +23,7 @@ const NetworkLinks = () => {
           <SiGithub />    
         </Link>
         <Link
-          href='https://www.linkedin.com/in/andreahernandez29/'
+          href={LINKEDIN_PROFILE_URL}
           rel='noopener noreferrer'
           className='network-links-icon'
           aria-label='Visit my LinkedIn profile'
@@ -31,7 +32,7 @@ const NetworkLinks = () => {
           <SiLinkedin /> 
         </Link>
         <Link
-          href='mailto:andreajhl29@gmail.com'
+          href={CONTACT_EMAIL}
           rel='noopener noreferrer'
           className='network-links-icon'
           aria-label='Send me an email'

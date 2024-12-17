@@ -1,3 +1,4 @@
+import { CV_URL } from '@constants/networkLinks';
 import wordings from '@wordings';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,7 +14,7 @@ const Home = () => {
           <h2 className='home-name'>{title}</h2>
           <h4 className='home-position'>{subtitle}</h4>
           <Link
-            href='https://drive.google.com/file/d/19qNP3HJ0We_6zYTOlpVYo7qrvWzjGZRK/view?usp=sharing'
+            href={CV_URL}
             rel='noopener noreferrer'
             aria-label='Go to curriculum'
             target='_blank'

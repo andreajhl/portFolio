@@ -1,8 +1,9 @@
 
 import Footer from '@components/footer';
 import Navigation from '@components/navigation';
-import Script from 'next/script';
 import '@styles/globals.scss';
+import { GITHUB_PROFILE_URL, LINKEDIN_PROFILE_URL } from '@constants/networkLinks';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Andrea Hernandez | Front End Developer',
@@ -53,8 +54,8 @@ const RootLayout = ({ children }) => (
             'url': 'https://andrea-hernandez-dev.vercel.app',
             'jobTitle': 'Front End Developer',
             'sameAs': [
-              'https://github.com/andreajhl',
-              'https://www.linkedin.com/in/andreahernandez29/',
+              `${GITHUB_PROFILE_URL}`,
+              `${LINKEDIN_PROFILE_URL}`,
             ],
             'worksFor': {
               '@type': 'Organization',
