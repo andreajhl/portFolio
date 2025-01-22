@@ -13,9 +13,9 @@ const Portfolio = () => (
       <About />
     </section>
     <div className='wave-section'>
-      <div className='main-setion'>
+      <section id='skill' className='main-setion'>
         <Skill />
-      </div>
+      </section>
     </div>
     <section id='projects' className='main-setion'>
       <Projects />
