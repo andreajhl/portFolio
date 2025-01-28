@@ -2,7 +2,7 @@ const wordings = {
   about: {
     title: 'Acerca de mí',
     profession: 'Front End Developer',
-    content:  `con más de 3 años de experiencia creando interfaces interactivas y atractivas, disfruto trabajar en equipos dinámicos y multidisciplinarios, aportando soluciones innovadoras y colaborativas. 
+    content:  `con más de 3 años y medio de experiencia creando interfaces interactivas y atractivas, disfruto trabajar en equipos dinámicos y multidisciplinarios, aportando soluciones innovadoras y colaborativas. 
     \nMe destaco por convertir diseños creativos en código limpio y eficiente utilizando HTML, CSS y JavaScript, además de frameworks como React y Next.js.
     \nCuento con experiencia en la integración de APIs y en la optimización de rendimiento de sitios web. Actualmente, me encuentro en búsqueda de una nueva posición laboral donde pueda contribuir con mi conocimiento y continuar creciendo profesionalmente.
     `,
@@ -18,7 +18,6 @@ const wordings = {
     projects: 'Proyectos',
     cv: 'Currículum',
     contact: 'Contacto',
-    cv: 'Curriculum',
   },
   home: {
     title: 'Soy Andrea Hernandez',

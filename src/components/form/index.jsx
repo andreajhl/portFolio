@@ -88,6 +88,7 @@ const Form = () => {
         </label>
         <textarea
           required
+          id='message'
           name='message'
           onChange={handleChange}
           value={formData.message}

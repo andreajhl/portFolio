@@ -27,11 +27,9 @@ const Menu = ({ isOpen, handleDropdown }) => {
     { title: 'Projects', href: '/#projects', text: projects },
     { title: 'Contact Us', href: '/#contact', text: contact },
   ];
+
   return (
-    <div
-      aria-expanded={isOpen}
-      className={classNames('menu-collapse', { 'menu-collapse-open': isOpen })}
-    >
+    <div className={classNames('menu-collapse', { 'menu-collapse-open': isOpen })}>
       <ul className='menu-list' role='menu'>
         {menuItems.map(item => (
           <MenuItem
@@ -40,13 +38,14 @@ const Menu = ({ isOpen, handleDropdown }) => {
             onClick={handleDropdown}
           />
         ))}
-        <li>
+        <li role='menuitem'>
           <Link
+            title={cv}
             href={CV_URL}
-            rel='noopener noreferrer'
-            aria-label='Go to curriculum'
             target='_blank'
+            rel='noopener noreferrer'
             className='menu-item-btn'
+            aria-label='Go to curriculum'
           >
             {cv}
           </Link>

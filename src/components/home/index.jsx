@@ -12,7 +12,7 @@ const Home = () => {
       <div className='home-container'>
         <div className='home-text'>
           <h2 className='home-name'>{title}</h2>
-          <h4 className='home-position'>{subtitle}</h4>
+          <h3 className='home-position'>{subtitle}</h3>
           <Link
             href={CV_URL}
             rel='noopener noreferrer'

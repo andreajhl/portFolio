@@ -6,7 +6,8 @@ import './styles.scss';
 const HamburgerButton = ({ isOpen, handleDropdown }) => (
   <button
     data-toggle='collapse'
-    aria-expanded={isOpen}
+    aria-expanded={String(isOpen)}
+    aria-label='Open navigation menu'
     onClick={handleDropdown}
     className={classNames('toggle', { open: isOpen })}
   >
