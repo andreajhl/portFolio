@@ -46,7 +46,7 @@ const wordings = {
       adGoat: {
         job: 'AdGoat',
         position: 'Ssr Front End Developer',
-        date: 'abr. 2023 - actualmente',
+        date: 'abr. 2024 - actualmente',
         subtitle: 'Ad Tech',
         stackTechnology: 'NextJs, TypeScript, Tailwind, Nodejs.',
         description: `Ofertas365: Desarrollé una plataforma de catálogos integrada con anuncios de Google Ads y AdSense, implementando estrategias de SEO y mejoras en tiempos de carga para optimizar el rendimiento de la web.\n
@@ -55,7 +55,7 @@ const wordings = {
       ficohsa: {
         job: 'Fichosa',
         position: 'Ssr Front End Developer',
-        date: 'Oct. 2023 - abr. 2023',
+        date: 'Oct. 2023 - abr. 2024',
         subtitle: 'Grupo Financiero',
         stackTechnology: 'NextJs, TypeScript, Martial-UI, Webpack.',
         description: 'Desarrolle una biblioteca de componentes transversales para los demás squads del banco y creación de componentes funcionales (micro front ends) fundamentales para optimizar el tiempo de nuevos desarrollos y mantener la consistencia en el proyecto.',
